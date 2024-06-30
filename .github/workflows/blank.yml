@@ -30,8 +30,9 @@ jobs:
       - name: '运行一个命令'
         run: echo Hello, world!
 
-      - name: '发布放到Github'
-        uses: JamesIves/github-pages-deploy-action@v4
+        -name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3 # 使用社区维护的action来部署到GitHub Pages
         with:
-          branch: gh-pages
-          folder: build
+          personal_token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub Actions默认提供的GITHUB_TOKEN
+          publish_dir: ./build # 假设你的构建产物位于dist目录
+          commit_message: '自动提交到 GitHub Pages' # 提交信息
