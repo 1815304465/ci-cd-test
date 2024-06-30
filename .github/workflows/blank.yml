@@ -30,7 +30,7 @@ jobs:
       - name: '运行一个命令'
         run: echo Hello, world!
 
-        -name: Deploy to GitHub Pages
+        -name: 'Deploy to GitHub Pages'
         uses: peaceiris/actions-gh-pages@v3 # 使用社区维护的action来部署到GitHub Pages
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub Actions默认提供的GITHUB_TOKEN
